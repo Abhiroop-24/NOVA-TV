@@ -1,0 +1,8 @@
+[Unit]
+Description=NOVA TV boot target (kiosk)
+Documentation=file:///opt/nova-tv/docs/installation.md
+# Pulls in the NOVA TV service and the base multi-user target so you can
+# isolate into a clean kiosk state with:  systemctl isolate nova-tv.target
+Requires=nova-tv.service
+Wants=multi-user.target
+AllowIsolate=yes

@@ -1,0 +1,26 @@
+[Unit]
+Description=NOVA TV kiosk interface
+After=systemd-modules-load.service
+Conflicts=getty@tty1.service
+After=getty@tty1.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+Environment=HOME=/root
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/root/.Xauthority
+TTYPath=/dev/tty1
+StandardInput=tty
+ExecStart=/usr/bin/startx /opt/nova-tv/systemd/nova-tv-start.sh -- :0 vt1 -nocursor -nolisten tcp
+WorkingDirectory=/opt/nova-tv
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

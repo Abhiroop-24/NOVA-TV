@@ -1,0 +1,109 @@
+{
+  "_comment": "NOVA TV application catalogue. Edit this file to add, remove, or reconfigure launcher entries. Compat statuses: verified | experimental | unavailable | untested. NOVA TV never stores credentials; browser-based services handle their own sign-in inside the external browser process.",
+  "applications": [
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "icon": "youtube",
+      "description": "Search and play YouTube videos — no browser, native mpv playback",
+      "launch_method": "internal",
+      "compat_status": "verified",
+      "compat_notes": "Uses yt-dlp to fetch stream URLs, mpv for playback. 720p on Pi 3B+. Requires internet.",
+      "category": "streaming",
+      "is_pinned": true
+    },
+    {
+      "id": "local_media",
+      "name": "Media",
+      "icon": "folder",
+      "description": "Browse and play local video and audio files",
+      "launch_method": "internal",
+      "compat_status": "verified",
+      "compat_notes": "Plays via external player (mpv). Verify codecs on target hardware.",
+      "category": "system",
+      "is_pinned": true
+    },
+    {
+      "id": "settings",
+      "name": "Settings",
+      "icon": "settings",
+      "description": "Display, network, input, and system configuration",
+      "launch_method": "internal",
+      "compat_status": "verified",
+      "compat_notes": "Built-in screen. Settings persist across reboots.",
+      "category": "system",
+      "is_pinned": true
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "icon": "apps",
+      "description": "Video streaming via web browser",
+      "launch_method": "browser",
+      "url": "https://www.youtube.com/tv",
+      "compat_status": "experimental",
+      "compat_notes": "Opens in external browser. Sign-in handled by the browser, not NOVA TV. Performance is limited on the Pi 3B+; 1080p playback may not be smooth.",
+      "category": "streaming",
+      "is_pinned": true
+    },
+    {
+      "id": "prime_video",
+      "name": "Prime Video",
+      "icon": "apps",
+      "description": "Amazon Prime Video via web browser",
+      "launch_method": "browser",
+      "url": "https://www.primevideo.com/",
+      "compat_status": "experimental",
+      "compat_notes": "No native Android TV app on Pi 3B+. Widevine DRM support in Raspberry Pi OS browsers is limited; protected content may fail to play. Sign in within the browser only.",
+      "category": "streaming",
+      "is_pinned": true
+    },
+    {
+      "id": "jiohotstar",
+      "name": "JioHotstar",
+      "icon": "apps",
+      "description": "Disney+ JioHotstar via web browser",
+      "launch_method": "browser",
+      "url": "https://www.jiohotstar.com/",
+      "compat_status": "experimental",
+      "compat_notes": "No native app on Pi 3B+. Region and DRM restrictions may block playback in a browser. Sign in within the browser only.",
+      "category": "streaming",
+      "is_pinned": true
+    },
+    {
+      "id": "google_search",
+      "name": "Google Search",
+      "icon": "search",
+      "description": "Open Google in the browser",
+      "launch_method": "browser",
+      "url": "https://www.google.com/",
+      "compat_status": "experimental",
+      "compat_notes": "Opens in external browser. Works as a website; not optimised for D-pad navigation.",
+      "category": "web",
+      "is_pinned": false
+    },
+    {
+      "id": "google_account",
+      "name": "Google Account",
+      "icon": "info",
+      "description": "Manage your Google account in the browser",
+      "launch_method": "browser",
+      "url": "https://myaccount.google.com/",
+      "compat_status": "experimental",
+      "compat_notes": "Account management in the browser. NOVA TV never requests or stores Google passwords.",
+      "category": "web",
+      "is_pinned": false
+    },
+    {
+      "id": "play_store",
+      "name": "Google Play Store",
+      "icon": "apps",
+      "description": "Not available on Raspberry Pi",
+      "launch_method": "unavailable",
+      "compat_status": "unavailable",
+      "compat_notes": "Google Play Store requires certified Android TV. Raspberry Pi OS cannot install or run it. Use the configured browser-based services instead.",
+      "category": "streaming",
+      "is_pinned": false
+    }
+  ]
+}
